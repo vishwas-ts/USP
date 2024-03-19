@@ -14,7 +14,7 @@ void freemakeargv(char **argv) {
 	free(argv);
 }
 
-int make_argv_delim(const char *s, const char *delimiters, char ***argvp) {
+int makeargv(const char *s, const char *delimiters, char ***argvp) {
 	int error;
 	int i;
 	int numtokens;
@@ -70,7 +70,7 @@ int main(int argc, char **argv) {
 
 	char mytest[] = "This is a test";
 
-	if ((num_tokens = make_argv_delim(mytest, delim, &myargv)) == -1)
+	if ((num_tokens = makeargv(mytest, delim, &myargv)) == -1)
 		fprintf(stderr, "Failed to construct argument array with given deliminator\n");
 	else 
 		for (i = 0; i < num_tokens; i++)
